@@ -7,7 +7,7 @@ import (
 	"log"
 	"os"
 
-	pb "github.com/EwanValentine/shippy-consignment-service/proto/consignment"
+	pb "github.com/mikedutuandu/shippy-consignment-service/proto/consignment"
 	microclient "github.com/micro/go-micro/client"
 	"github.com/micro/go-micro/cmd"
 	"github.com/micro/go-micro/metadata"
@@ -33,7 +33,7 @@ func main() {
 	cmd.Init()
 
 	// Create new greeter client
-	client := pb.NewShippingServiceClient("go.micro.srv.consignment", microclient.DefaultClient)
+	client := pb.NewShippingService("shippy.consignment.service", microclient.DefaultClient)
 
 	// Contact the server and print out its response.
 	file := defaultFilename

@@ -1,6 +1,6 @@
 FROM golang:1.9.0 as builder
 
-WORKDIR /go/src/github.com/EwanValentine/shippy-consignment-cli
+WORKDIR /go/src/github.com/mikedutuandu/shippy-consignment-cli
 
 COPY . .
 
@@ -15,6 +15,6 @@ RUN apk --no-cache add ca-certificates
 RUN mkdir /app
 WORKDIR /app
 COPY consignment.json /app/consignment.json
-COPY --from=builder /go/src/github.com/EwanValentine/shippy-consignment-cli .
+COPY --from=builder /go/src/github.com/mikedutuandu/shippy-consignment-cli .
 
 ENTRYPOINT ["./shippy-consignment-cli"]
